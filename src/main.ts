@@ -1,14 +1,18 @@
-let person
-person = 'Rory'
-import array from './utilies/arrays'
+// const myFunc = (num: number): number => {
+//     return num * num;
+//   };
+  
+//   export default myFunc;
 
-const buildPerson = (person: string) => {
-    return 'your person is ${person}';
-}
+import express from 'express';
 
-console.log(buildPerson(person))
+const app = express()
+const port = 5000
 
-enum Compass {North, South, East, West}
-const move = (dist: number, direction: Compass) => {
-    return 'walk' + dist + 'paces' + direction
-}
+app.get('/api', (req, res) => {
+    res.send('Hello, world')
+})
+
+app.listen(port, () => console.log('Listening on port ', port))
+
+export default app;
